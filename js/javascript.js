@@ -4,8 +4,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
  maxZoom: 19,
  attribution: 'OpenStreetMap contributors',
 })
-osm.addTo(map)
-
 async function addDistrictsGeoJson(url) {
  const response = await fetch(url)
  const data = await response.json()
@@ -13,4 +11,7 @@ async function addDistrictsGeoJson(url) {
  polygons.addTo(map)
 }
 addDistrictsGeoJson('geojson/tartu_city_districts_edu.geojson')
+
+osm.addTo(map)
+
 
